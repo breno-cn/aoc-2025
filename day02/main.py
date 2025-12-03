@@ -40,7 +40,7 @@ def generate_windows(array: str, size: int) -> List[List[int]]:
     result = []
     left = 0
     right = size
-    
+
     while right <= len(array):
         result.append(array[left:right])
         left += size
@@ -66,15 +66,7 @@ def is_valid_id_part2(id: int) -> bool:
     while window_size <= number_size // 2:
         windows = generate_windows(number, window_size)
         if all_equal(windows):
-            #print(windows)
             return False
-        # if len(windows) != len(set(windows)):
-            # print(windows)
-            # return False
-        # print(windows)
-        #print(f'windows for id {id} -> {windows}')
-        #if all(x == windows[0] for x in windows):
-        #    return False
 
         window_size += 1
         
@@ -89,9 +81,7 @@ def part2(ranges: List[tuple[int, int]]):
         
         for id in range(begin, end + 1):
             if not is_valid_id_part2(id):
-                #print(f'id not valid: {id}') 
                 result += id
-                # break
                 
     return result
 
@@ -109,5 +99,3 @@ result_part_2 = part2(ranges)
 end = time.perf_counter()
 
 print(f'part 2 took {(end - start):.6f} seconds, result: {result_part_2}')
-
-#print(generate_windows('1010', 2))
