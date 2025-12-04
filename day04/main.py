@@ -38,7 +38,7 @@ def part1(board: List[List[str]]) -> int:
 
     return result
 
-def part2(board: list[List[str]]) -> int:
+def part2(board: List[List[str]]) -> int:
     result = 0
 
     while True:
