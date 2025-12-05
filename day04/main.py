@@ -1,5 +1,6 @@
 import os
 import sys
+import time
 from typing import List
 
 def read_input() -> List[List[str]]:
@@ -63,5 +64,8 @@ board = read_input()
 result_part_1 = part1(board)
 print(result_part_1)
 
+start = time.perf_counter()
 result_part_2 = part2(board)
-print(result_part_2)
+end = time.perf_counter()
+
+print(f'part 2 took {(end - start):.6f} seconds, result: {result_part_2}')
